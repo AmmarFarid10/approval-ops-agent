@@ -1,0 +1,10 @@
+services:
+  api:
+    build: .
+    ports: ["127.0.0.1:8000:8000"]
+    environment:
+      API_TOKEN: ${API_TOKEN:?Set API_TOKEN}
+      DATA_PATH: /data/app.sqlite3
+    volumes: ["data:/data"]
+volumes:
+  data:
